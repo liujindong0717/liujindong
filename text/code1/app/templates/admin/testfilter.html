@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>这里有东西</p>
+{{ 'hello world'|reverse|upper }}
+
+<hr>
+
+{{ var1 }}
+<hr>
+{{ var1|safe }}
+<hr>
+
+{{ var2|lower }}
+{{ var2|upper }}
+<hr>
+{{ var2|title }}
+
+<hr>
+<p>{{ '%s is %d' | format('name',17) }}</p>
+<br>
+<p>{{ '%s is %d' | format(var2,17) }}</p>
+<hr>
+
+{{ var1|striptags }}
+<hr>
+<p>{{ 'helloevery one' | truncate(9,killwords = True,end = '',leeway = 0) }}</p>
+<hr>
+
+{% filter upper|lower %}
+    <p>abcdefg</p>
+    <p>hehehaha</p>
+    <p>nihaoma</p>
+    <p>gfsdg</p>
+    <p>hgfdhfh</p>
+
+{% endfilter %}
+
+<hr>
+{{ [1,2,3,4,5]| lireverse }}
+
+
+</body>
+</html>

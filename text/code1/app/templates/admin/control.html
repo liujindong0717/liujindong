@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>测试控制语句</h1>
+
+{{ stu }}
+{{ stu.name }}
+<hr>
+{% if stu %}
+    <em>欢迎您：</em><a href="">{{ stu.name }}</a>
+{% else %}
+    <a href="">登录</a><a href="">注册</a>
+{% endif %}
+
+
+<br>
+<hr>
+
+{% for stu in stus if stu.name %}
+    <div>{{ stu.name }}--------{{ loop.index }}</div>
+
+{% endfor %}
+
+<hr>
+
+{% for stu in stus if stu.name %}
+    <div>{{ stu.name }}--------{{ loop.index0 }}-----{{ loop.revindex }}----{{ loop.revindex0 }}</div>
+
+{% endfor %}
+
+<hr>
+{% for stu in stus if stu.name %}
+    <div>{{ stu.name }}--------{{ loop.first }}----- {{ loop.last }}--- {{ loop.length }}</div>
+
+{% endfor %}
+
+<hr>
+{% for stu in stus if stu.name %}
+    <div>{{ stu.name }}--------{{ loop.cycle('hehe',2,3,4) }}</div>
+
+{% endfor %}
+</body>
+</html>

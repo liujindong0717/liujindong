@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息编辑页面</title>
+    <style>
+        .info {
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="{{ url_for('.edit') }}" class='info' enctype="multipart/form-data">
+    <h1 style="color:burlywood">个人信息编辑</h1>
+    <a href="{{ url_for('.profile7') }}"><h2 style="color:burlywood">返回</h2></a>
+    <div class="edit_info_m">
+        <table width="100%">
+            {#                <tr>#}
+            {#                    <td width="140px">用户id：</td>#}
+            {#                    <td><input type="text" name="userid" id="userid" value="{{ user.user_id }}" class="info_input info_input_170" /></td>#}
+            {#                </tr>#}
+            <tr>
+                <td width="140px">用户名：</td>
+                <td><input type="text" name="username" id="username" value="{{ user.user_name }}"
+                           class="info_input info_input_170"/></td>
+            </tr>
+            <br>
+            <tr>
+                <td width="140px">密&nbsp;&nbsp;&nbsp;码：</td>
+                <td><input type="text" name="password" id="pwd" value="{{ user.password }}"
+                           class="info_input info_input_170"/></td>
+            </tr>
+            <tr>
+                <td><span style="font-family:Arial;">Email</span>：</td>
+                <td><input type="text" name="email" id="email" value="{{ user.email }}"
+                           class="info_input info_input_170"/></td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <div class="logo">
+                        <img src="{{ user.head_img }}"/>
+                    </div>
+                </td>
+                <td>
+                    <div class="upload">
+                        <p>上传头像</p>
+                        <input name="image" id="image" type="file"/>
+                    </div>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <p>自我描述</p>
+                </td>
+                <td>
+                    <textarea name="content" id="content" cols="30" rows="10">{{ user.short_description }}</textarea>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <input class='btn' type="submit" value="保存编辑">
+                </td>
+            </tr>
+        </table>
+    </div><!--edit_info_m end-->
+</form>
+</body>
+</html>

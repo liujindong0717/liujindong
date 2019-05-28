@@ -1,0 +1,10 @@
+{% macro show_user(loop,user) %}
+
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ user.user_name | capitalize }}</td>
+        <td>{{ user.head_img }}</td>
+        <td>{{ user.short_description }}</td>
+    </tr>
+
+{% endmacro %}
